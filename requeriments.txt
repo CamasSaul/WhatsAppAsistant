@@ -1,0 +1,6 @@
+fastapi
+pydantic
+psutil
+uvicorn
+pytest
+PyQt5
