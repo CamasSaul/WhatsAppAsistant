@@ -31,8 +31,11 @@ python main.py
 
 ### Screenshots:
 - Interacción breve con el asistente:
-
-
+  
+![WhatsApp Image 2025-06-11 at 15 24 15_757377a1](https://github.com/user-attachments/assets/d1e9c5a1-b37c-46d7-a76a-ad637b4a8006)
+- Acciones que puede hacer: (aún en desarrollo)
+  
+![WhatsApp Image 2025-06-11 at 15 22 06_55d5205f](https://github.com/user-attachments/assets/594eebbf-2685-4c7a-9e7b-1a5f85c20628)
 
 ### Notes
 - This project is still under development.
