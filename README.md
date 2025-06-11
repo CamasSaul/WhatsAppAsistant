@@ -1,34 +1,40 @@
-# Asistente de mensajería para WhatsApp Web
+# Messaging Assistant for WhatsApp Web
 
-## Cómo funciona?
+## How does it work?
+This is a prototype of a messaging assistant for WhatsApp Web.  
+It acts as an intermediary between you and your contacts.  
+Provide the assistant with information so it knows what to do and how to respond to the messages it receives.
 
-Si usted no puede constestar mensjaes de WhatsApp peersonalemente, ya sea porque está ocupado o porque tiene muchos contactos, puede automatizar la tarea con el WhatsApp Asistant.
-El funcionará como intermediario entre usted y su contacto.
-Proporcione informació al asistente para que sepa que hacer y cómo contestar a los mensajes que le lleguen.
+## How to use:
+- Once the system is running, log in by scanning the QR code with the WhatsApp mobile app.
+- Currently, there is no user interface. To add a contact for automation, you must manually add it in the source code at:  
+  `/sources/server.py`, line 73.
 
-## Cómo usar:
-- Una vez iniciado el sistema, inicia sesión escaneando el código QR con la aplicación móvil de WhatsApp.
-- Selecciona los contactos que deseas automatizar.
-- __Activa/Desactiva__ el asistente en cualquier momento.
-- En la pesataña de conversación, podrás ver todo lo que el asistente a hecho.
+### Installation:
+- Install or create a __Python 3.11__ environment (it’s very important to use a version between 3.8 and 3.11).
+- Install Node.js on your system.
+- Clone the repository and run the following commands:
 
-## Instalación
-#### Instalador
-- Descarga WhatsAppAsistant.exe
-- Instale y ejecute.
-
-#### Código fuente
-- Instale o cree entorno de Python 3.11 (muy importante que sea de 3.8 - 3.11)
-- Instale en su sistema Node.js
-- Clone el repositorio y ejecute lo siguiente:
 ```bash
-npm install
+npm install --prefix node-backend
 ```
+
 ```bash
-pip install -r requeriments.txt
+pip install -r requirements.txt
 ```
-- Por último, ejecute `main.py`
+- You’ll need your own Google GenAI API key for the system to work.
+- Finally, run ``main.py``:
 
 ```bash
 python main.py
 ```
+
+### Screenshots:
+- Interacción breve con el asistente:
+
+
+
+### Notes
+- This project is still under development.
+- It only works on Windows.
+- There are still many bugs.

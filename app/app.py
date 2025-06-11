@@ -1,41 +1,29 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QLabel, QLayout, QWidget, QPushButton, QMessageBox, QVBoxLayout
 
-class App (QApplication):
-    def __init__ (self, debug=False):
-        super().__init__()
-        ventana = MiVentana()
-        ventana.show()
-        sys.exit(app.exec_())
-
-
+class BotonPersonalizado(QPushButton):
+    def __init__(self, texto, parent):
+        super().__init__(texto, parent)
+        self.setStyleSheet("background-color: green; color: white; font-weight: bold;")
 
 class Window (QWidget):
-    def __init__(self, parent: typing.Optional['QWidget'] = ..., flags: typing.Union[QtCore.Qt.WindowFlags, QtCore.Qt.WindowType] = ...) -> None:
-        super().__init__(parent, flags)
+    def __init__(self) -> None:
+        super().__init__()
         self.setWindowTitle('WhatsApp Autoresponder')
         self.setGeometry(100, 100, 300, 300)
 
-        self.button = QPushButton('Click aquí', self)
-        self.button.clicked.connect()
-
-    def show_message (self):
-        ...
-
-
-
-class MiVentana(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Mi Interfaz con PyQt")
-        self.setGeometry(100, 100, 300, 200)
-
-        self.boton = QPushButton("Haz clic", self)
-        self.boton.clicked.connect(self.mostrar_mensaje)
+        self.button = BotonPersonalizado('Click aquí', self)
+        self.button.clicked.connect(self.show_message)
 
         layout = QVBoxLayout()
-        layout.addWidget(self.boton)
+        layout.addChildWidget(self.button)
         self.setLayout(layout)
 
-    def mostrar_mensaje(self):
-        QMessageBox.information(self, "Mensaje", "¡Hola desde PyQt!")
+    def show_message (self):
+        QMessageBox.information(self, 'Mensaje', 'Botón presionado.')
+
+
+app = QApplication(sys.argv)
+window = Window()
+window.show()
+sys.exit(app.exec_())

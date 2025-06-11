@@ -4,3 +4,5 @@ psutil
 uvicorn
 pytest
 PyQt5
+requests
+httpz

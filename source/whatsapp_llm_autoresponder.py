@@ -1,5 +1,5 @@
 import csv
-from fastapi import FastAPI, BackgroundTasks
+from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 from source.datamodel import Contact
@@ -21,8 +21,8 @@ modelo_thread = iniciar_modelo_en_background()
 
 # Crear lista de contactos
 contactos = []
-with open('contactos_whatsapp.csv', mode='r', encoding='utf-8') as file:
-    contactos_admitidos = open('contactos_admitidos.txt', encoding='utf-8').read().split()
+with open('data/contactos_whatsapp.csv', mode='r', encoding='utf-8') as file:
+    contactos_admitidos = open('data/contactos_admitidos.txt', encoding='utf-8').read().split()
     reader = csv.DictReader(file)
     for contacto in reader:
         nombre = contacto['Nombre']
